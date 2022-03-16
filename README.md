@@ -1,10 +1,11 @@
 # 1337-meet-members-page
 This project is a sample project for evaluation purposes.
 
-- Language : React, Typescript
+- Language : React, Typescript, Hooks
 - State management : Redux
 - middleware : Thunk
-- style: Css, Flex
+- style: Css, Flex, `Styled-component`
+- tools: `redux-devtools-extension` to monitoring states while developing & `React dev tools` on Chrome or Firefox.
 # What is the project about?
 The project is created to show all 1337 members information in different offices all over the world. you can access any member by name and office filter or you have also an option for sorting.
 # How to run 
