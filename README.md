@@ -26,6 +26,5 @@ It is available on **https://matucs.github.io/1337/**
 - For easy access to any member information, I used basic front-end filtering with name and office( As I didn't have any API for filtering I managed it in client-side)
 - To have a sorting option, I prepared a sorting by name and office
 - There is a simple animated fancy loading to show data is getting from the server.
-- For the sake of speed, I cashed fetched data after the first call using Memo.
 
 *For any further questions/issues contact me at mehdi.byt@gmail.com*
