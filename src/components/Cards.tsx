@@ -1,5 +1,6 @@
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Card from "./Card";
+import { StyledCardColumns, StyledLoader } from "./Style";
 import { IMember, MemberState } from "./type";
 
 function Cards() {
@@ -7,15 +8,15 @@ function Cards() {
   const loading = useSelector<MemberState, boolean>((state) => state.loading);
 
   return (
-    <div className="card-columns">
+    <StyledCardColumns>
       {loading ? (
-        <div className="loader"></div>
+        <StyledLoader />
       ) : (
         result.map((member, index) => {
           return <Card member={member} key={index} />;
         })
       )}
-    </div>
+    </StyledCardColumns>
   );
 }
 

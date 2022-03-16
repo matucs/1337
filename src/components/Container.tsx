@@ -1,10 +1,17 @@
-import React, { Dispatch, useMemo, useState } from "react";
+import React, { Dispatch, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchMembers, filterBy, sortBy } from "../store/ActionCreators";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Header from "./Header";
-import { StyledContainer, StyledFooter } from "./Style";
+import {
+  StyledContainer,
+  StyledFilter,
+  StyledFilterByName,
+  StyledFilterByOffice,
+  StyledFooter,
+  StyledSortBy,
+} from "./Style";
 
 function Container() {
   const dispatch: Dispatch<any> = useDispatch();
@@ -43,50 +50,46 @@ function Container() {
   return (
     <>
       <StyledContainer>
-        <div className="container">
-          <Header />
-          <section>
-            <div className="section-title">
-              <div className="sort-by">
-                <h3>Sort by:</h3>
-                <select onChange={(e) => HandleChange(e)}>
-                  <option id="0" value={"name"}>
-                    name
-                  </option>
-                  <option id="1" value={"office"}>
-                    office
-                  </option>
-                </select>
-                <div className="filter">
-                  <div className="filter-by-name">
-                    <label htmlFor="filter-name">
-                      <h3>Enter a name</h3>
-                    </label>
-                    <input
-                      onChange={(e) => HandleNameFilter(e)}
-                      name="filter-name"
-                      value={name}
-                      id="filter-name"
-                    />
-                  </div>
-                  <div className="filter-by-office">
-                    <label htmlFor="filter-office">
-                      <h3>Enter office</h3>
-                    </label>
-                    <input
-                      onChange={(e) => HandleOfficeFilter(e)}
-                      name="filter-office"
-                      id="filter-office"
-                      value={office}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr className="solid" />
-            <Cards />
-          </section>
-        </div>
+        <Header />
+        <section>
+          <StyledSortBy>
+            <h3>Sort by:</h3>
+            <select onChange={(e) => HandleChange(e)}>
+              <option id="0" value={"name"}>
+                name
+              </option>
+              <option id="1" value={"office"}>
+                office
+              </option>
+            </select>
+            <StyledFilter>
+              <StyledFilterByName>
+                <label htmlFor="filter-name">
+                  <h3>Enter a name</h3>
+                </label>
+                <input
+                  onChange={(e) => HandleNameFilter(e)}
+                  name="filter-name"
+                  value={name}
+                  id="filter-name"
+                />
+              </StyledFilterByName>
+              <StyledFilterByOffice>
+                <label htmlFor="filter-office">
+                  <h3>Enter office</h3>
+                </label>
+                <input
+                  onChange={(e) => HandleOfficeFilter(e)}
+                  name="filter-office"
+                  id="filter-office"
+                  value={office}
+                />
+              </StyledFilterByOffice>
+            </StyledFilter>
+          </StyledSortBy>
+          <hr className="solid" />
+          <Cards />
+        </section>
       </StyledContainer>
       <StyledFooter>
         <Footer />
