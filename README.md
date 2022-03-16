@@ -12,6 +12,11 @@ The project is created to show all 1337 members information in different offices
 2. In terminal -> `npm i`
 3. Run the project ->`npm run start`
 4. You can access the application on -> `http://localhost:3000`
+# Available scripts
+- `npm run deploy`: deploye the project on the homepage mentioned in the `package.json` file,
+- `npm run start`: start the project on your localhost address,
+- `build`: build the project,
+- `test`: run available unit tests
 # Public URL 
 It is available on **https://matucs.github.io/1337/**
 # Features
