@@ -9,7 +9,7 @@ function Cards() {
   return (
     <div className="card-columns">
       {loading ? (
-        <h1 className="loader"></h1>
+        <div className="loader"></div>
       ) : (
         result.map((member, index) => {
           return <Card member={member} key={index} />;
