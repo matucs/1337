@@ -28,15 +28,11 @@ export function filterBy(option: MemberAction) {
   return action;
 }
 
-export function Loading(loaded: boolean) {
+export function Loading(isloading: boolean) {
   const action: MemberAction = {
     type: actionTypes.LOADING,
-    payload: true,
+    payload: isloading,
   };
-  if (loaded === true) {
-    action.type = actionTypes.LOADED_SUCCCESS;
-    action.payload = false;
-  }
   return action;
 }
 export function HttpRequest(action: MemberAction) {

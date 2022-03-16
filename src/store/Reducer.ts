@@ -10,9 +10,10 @@ const Reducer = (
   state: MemberState = initialState,
   action: MemberAction
 ): MemberState => {
+
   switch (action.type) {
     case actionTypes.FETCH_MEMBERS:
-      return { ...state, result: action.payload , members: action.payload};
+      return { ...state, result: action.payload , members: action.payload, loading: false};
     case actionTypes.SORT_BY_NAME:
       const _newState: IMember[] = state.members.slice() ;
       _newState.sort((a, b) => (a.name > b.name ? 1 : -1));
@@ -32,8 +33,6 @@ const Reducer = (
       return { ...state, result: result };
     case actionTypes.LOADING:
       return { ...state, loading: true };
-    case actionTypes.LOADED_SUCCCESS:
-      return { ...state, loading: false };
     default:
       return { ...state };
   }

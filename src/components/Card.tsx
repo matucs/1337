@@ -9,7 +9,6 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ member }) => {
-  const dispatch: Dispatch<any> = useDispatch();
 
   return (
     <div className="card">
@@ -18,7 +17,6 @@ export const Card: React.FC<Props> = ({ member }) => {
           <img
             src={member.imagePortraitUrl ?? "assets/img/default.jpg"}
             alt={`${member.name}`}
-            onLoad={() => dispatch(Loading(true))}
           />
         </div>
         <div className="card-body">

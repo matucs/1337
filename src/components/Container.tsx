@@ -1,6 +1,11 @@
-import React, { Dispatch, useState } from "react";
+import React, { Dispatch, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchMembers, filterBy, sortBy } from "../store/ActionCreators";
+import {
+  fetchMembers,
+  filterBy,
+  Loading,
+  sortBy,
+} from "../store/ActionCreators";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -8,7 +13,10 @@ import { StyledContainer, StyledFooter } from "./Style";
 
 function Container() {
   const dispatch: Dispatch<any> = useDispatch();
-  React.useEffect(() => dispatch(fetchMembers()), [dispatch]);
+  React.useEffect(() => {
+    dispatch(fetchMembers());
+  }, [dispatch]);
+
   const [name, useName] = useState("");
   const [office, useOffice] = useState("");
   const HandleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -20,12 +28,22 @@ function Container() {
   const HandleNameFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const type = e.currentTarget.name === "filter-name" ? "name" : "office";
     useName(e.target.value.trim());
-    dispatch(filterBy({ type, payload: {filter: type , name:e.target.value.trim() , office} }));
+    dispatch(
+      filterBy({
+        type,
+        payload: { filter: type, name: e.target.value.trim(), office },
+      })
+    );
   };
   const HandleOfficeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const type = e.currentTarget.name === "filter-name" ? "name" : "office";
     useOffice(e.target.value.trim());
-    dispatch(filterBy({ type, payload: {filter: type , name , office:e.target.value.trim()} }));
+    dispatch(
+      filterBy({
+        type,
+        payload: { filter: type, name, office: e.target.value.trim() },
+      })
+    );
   };
   return (
     <>
