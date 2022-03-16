@@ -15,14 +15,16 @@ export interface IMember {
   highlighted: boolean;
   published: boolean;
 }
-
+export type SortType = "name" | "office";
 export type MemberState = {
   members: IMember[];
+  result: IMember[];
+  loading: boolean;
 };
 
 export type MemberAction = {
   type: string;
-  member: IMember;
+  payload: any;
 };
 
 export type DispatchType = (args: MemberAction) => MemberAction;

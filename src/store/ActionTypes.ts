@@ -1,1 +1,6 @@
 export const FETCH_MEMBERS = "FETCH_MEMBERS"
+export const SORT_BY_NAME = "SORT_BY_NAME"
+export const FILTER = "FILTER"
+export const SORT_BY_OFFICE = "SORT_BY_OFFICE"
+export const LOADED_SUCCCESS = "LOADED_SUCCCESS"
+export const LOADING = "LOADING"

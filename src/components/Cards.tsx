@@ -1,13 +1,17 @@
-import React from "react";
+import { useSelector } from "react-redux";
 import Card from "./Card";
+import { IMember, MemberState } from "./type";
 
 function Cards() {
-  const result: any = [];
-  const element = () => {
-    for (var i = 0; i < 10; i++) result.push(<Card />);
-    return result;
-  };
-  return <div className="card-columns">{element()}</div>;
+  const result = useSelector<MemberState, IMember[]>((state) => state.result);
+
+  return (
+    <div className="card-columns">
+      {result?.map((member, index) => {
+        return <Card member={member} key={index} />;
+      })}
+    </div>
+  );
 }
 
 export default Cards;
