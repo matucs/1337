@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+# 1337-meet-members-page
+This project is a sample project for evaluation purposes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Language : React, Typescript
+- State management : Redux
+- middleware : Thunk
+- style: Css, Flex
+# What is the project about?
+The project is created to show all 1337 members information in different offices all over the world. you can access any member by name and office filter or you have also an option for sorting.
+# How to run 
+1. Clone the repo
+2. In terminal -> `npm i`
+3. Run the project ->`npm run start`
+4. You can access the application on -> `http://localhost:3000`
+# Public URL 
+It is available on **https://matucs.github.io/1337/**
+# Features
+- Get all members from the given API.
+- For the sake of speed of loading, I used lazy loading  to load data faster while scrolling the page
+- For easy access to any member information, I used basic front-end filtering with name and office( As I didn't have any API for filtering I managed it in client-side)
+- To have a sorting option, I prepared a sorting by name and office
+- There is a simple animated fancy loading to show data is getting from the server.
+- For the sake of speed, I cashed fetched data after the first call using Memo.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+*For any further questions/issues contact me at mehdi.byt@gmail.com*

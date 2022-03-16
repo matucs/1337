@@ -1,11 +1,6 @@
-import React, { Dispatch, useEffect, useState } from "react";
+import React, { Dispatch, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  fetchMembers,
-  filterBy,
-  Loading,
-  sortBy,
-} from "../store/ActionCreators";
+import { fetchMembers, filterBy, sortBy } from "../store/ActionCreators";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Header from "./Header";

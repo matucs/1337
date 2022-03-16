@@ -1,7 +1,5 @@
-import { Dispatch, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { json } from "stream/consumers";
-import { Loading } from "../store/ActionCreators";
+import { memo } from "react";
+import {  useSelector } from "react-redux";
 import Card from "./Card";
 import { IMember, MemberState } from "./type";
 
@@ -22,4 +20,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default memo(Cards);
