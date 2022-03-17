@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./components/Card";
 import { IMember } from "./components/type";
-import renderer from "react-test-renderer";
+import renderer  from "react-test-renderer";
 
 describe("Cards should be render", () => {
   const member: IMember = {

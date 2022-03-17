@@ -5,7 +5,7 @@ This project is a sample project for evaluation purposes.
 - State management : Redux
 - middleware : Thunk
 - style: Css, Flex, `Styled-component`
-- tools: `redux-devtools-extension` to monitoring states while developing & `React dev tools` on Chrome or Firefox.
+- tools: (all  of these tools have dev dependency on the project)`redux-devtools-extension` to monitoring states while developing & `React dev tools` on Chrome or Firefox & `react-test-renderer` for testing & `gh-pages` for deploying on github online host.
 # What is the project about?
 The project is created to show all 1337 members information in different offices all over the world. you can access any member by name and office filter or you have also an option for sorting.
 # How to run 
@@ -16,8 +16,8 @@ The project is created to show all 1337 members information in different offices
 # Available scripts
 - `npm run deploy`: deploye the project on the homepage mentioned in the `package.json` file,
 - `npm run start`: start the project on your localhost address,
-- `build`: build the project,
-- `test`: run available unit tests
+- `npm run build`: build the project,
+- `npm run test`: run available unit tests
 # Public URL 
 It is available on **https://matucs.github.io/1337/**
 # Features

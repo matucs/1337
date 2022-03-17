@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards should be render Card changes the class when hovered 1`] = `
+<div
+  className="sc-eCImPb hZnmxO"
+>
+  <div
+    className="lazyload-wrapper "
+  >
+    <div
+      className="lazyload-placeholder"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Cards should be render Card changes the class when hovered 2`] = `
+<div
+  className="sc-eCImPb hZnmxO"
+>
+  <div
+    className="lazyload-wrapper "
+  >
+    <div
+      className="lazyload-placeholder"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Cards should be render card renders snapshots, too 1`] = `
+<div
+  className="sc-eCImPb hZnmxO"
+>
+  <div
+    className="lazyload-wrapper "
+  >
+    <div
+      className="lazyload-placeholder"
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
