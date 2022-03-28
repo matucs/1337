@@ -18,8 +18,6 @@ The project is created to show all 1337 members information in different offices
 - `npm run start`: start the project on your localhost address,
 - `npm run build`: build the project,
 - `npm run test`: run available unit tests
-# Public URL 
-It is available on **https://matucs.github.io/1337/**
 # Features
 - Get all members from the given API.
 - For the sake of speed of loading, I used lazy loading  to load data faster while scrolling the page
