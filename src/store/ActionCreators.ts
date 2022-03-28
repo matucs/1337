@@ -1,45 +1,54 @@
-import { DispatchType, MemberAction, SortType } from "../components/type";
-import { Authorization, Uri } from "../Constant";
+import { DispatchType, MemberAction, SortType } from "../components/Types";
 import * as actionTypes from "./ActionTypes";
 
-export function fetchMembers() {
+export const fetchMembers: () => (dispatch: DispatchType) => void = () => {
   const action: MemberAction = {
     type: actionTypes.FETCH_MEMBERS,
     payload: [],
+    isLoading: false,
+    filter: { name: "", office: "" },
   };
 
   return HttpRequest(action);
-}
-export function sortBy(option: SortType) {
+};
+export const sortBy: (option: SortType) => MemberAction = (
+  option: SortType
+) => {
   const action: MemberAction = {
     type: actionTypes.SORT_BY_NAME,
     payload: [],
+    isLoading: false,
+    filter: { name: "", office: "" },
   };
   if (option === "office") {
     action.type = actionTypes.SORT_BY_OFFICE;
   }
   return action;
-}
-export function filterBy(option: MemberAction) {
-  const action: MemberAction = {
-    type: actionTypes.FILTER,
-    payload: option.payload,
-  };
-  return action;
-}
+};
+export const filterBy: (option: MemberAction) => MemberAction = (
+  option: MemberAction
+) => {
+  return { ...option, type: actionTypes.FILTER };
+};
 
-export function Loading(isloading: boolean) {
+export const Loading: (isloading: boolean) => MemberAction = (
+  isloading: boolean
+) => {
   const action: MemberAction = {
     type: actionTypes.LOADING,
-    payload: isloading,
+    payload: [],
+    isLoading: isloading,
+    filter: { name: "", office: "" },
   };
   return action;
-}
-export function HttpRequest(action: MemberAction) {
+};
+export const HttpRequest: (
+  action: MemberAction
+) => (dispatch: DispatchType) => void = (action: MemberAction) => {
   return (dispatch: DispatchType) => {
-    fetch(Uri, {
+    fetch(process.env.REACT_APP_API_URI as string, {
       headers: {
-        authorization: Authorization,
+        authorization: process.env.REACT_APP_API_KEY as string,
       },
     })
       .then((reponse) => reponse)
@@ -49,4 +58,4 @@ export function HttpRequest(action: MemberAction) {
         dispatch(action);
       });
   };
-}
+};

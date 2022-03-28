@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./components/Card";
-import { IMember } from "./components/type";
+import Member from "./components/Member";
+import { IMember } from "./components/Types";
 import renderer  from "react-test-renderer";
 
 describe("Cards should be render", () => {
@@ -22,7 +22,7 @@ describe("Cards should be render", () => {
     published: false,
   };
   test("card renders snapshots, too", () => {
-    const component = renderer.create(<Card member={member} />);
+    const component = renderer.create(<Member member={member} />);
     let card = component.toJSON();
     expect(card).toMatchSnapshot();
   });

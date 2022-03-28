@@ -1,5 +1,5 @@
 import React from "react";
-import { IMember } from "./type";
+import { IMember } from "./Types";
 import LazyLoad from "react-lazyload";
 import {
   StyledCard,
@@ -8,14 +8,13 @@ import {
   StyledCardTitle,
   StyledMoreInfo,
   StyledSocialMedia,
-} from "./Style";
-import { WEBSITE_URL } from "./Constant";
+} from "./Styled";
 
 type Props = {
   member: IMember;
 };
 
-export const Card: React.FC<Props> = ({ member }) => {
+export const Member: React.FC<Props> = ({ member }) => {
   return (
     <StyledCard>
       <LazyLoad once>
@@ -31,21 +30,24 @@ export const Card: React.FC<Props> = ({ member }) => {
               <h4>{member.name}</h4>
             </StyledCardTitle>
             <StyledSocialMedia>
-              <a href={member.linkedIn}>
+              <a href={process.env.REACT_APP_LINKEDIN_URI + member.linkedIn}>
                 <i
                   className="icon fa fa-linkedin-square"
                   aria-hidden="true"></i>
               </a>
-              <a href={member.gitHub}>
+              <a href={process.env.REACT_APP_GITHUB_URI + member.gitHub}>
                 <i className="icon fa fa-github" aria-hidden="true"></i>
               </a>
-              <a href={member.twitter}>
+              <a href={process.env.REACT_APP_TWITER_URI + member.twitter}>
                 <i className="icon fa fa-twitter" aria-hidden="true"></i>
               </a>
             </StyledSocialMedia>
           </StyledCardInfo>
           <StyledMoreInfo
-            href={`${WEBSITE_URL}/meet/${member.name.replace(" ", "-")}`}>
+            href={`${process.env.REACT_APP_WS_URI}/meet/${member.name.replace(
+              " ",
+              "-"
+            )}`}>
             Get to know me
           </StyledMoreInfo>
           <h5>Office: {member.office}</h5>
@@ -55,4 +57,4 @@ export const Card: React.FC<Props> = ({ member }) => {
   );
 };
 
-export default Card;
+export default Member;

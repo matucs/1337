@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import Card from "./Card";
-import { StyledCardColumns, StyledLoader } from "./Style";
-import { IMember, MemberState } from "./type";
+import Member from "./Member";
+import { StyledCardColumns, StyledLoader } from "./Styled";
+import { IMember, MemberState } from "./Types";
 
-function Cards() {
+const Members: React.FC<{}> = () => {
   const result = useSelector<MemberState, IMember[]>((state) => state.result);
   const loading = useSelector<MemberState, boolean>((state) => state.loading);
 
@@ -13,11 +13,11 @@ function Cards() {
         <StyledLoader />
       ) : (
         result.map((member, index) => {
-          return <Card member={member} key={index} />;
+          return <Member member={member} key={index} />;
         })
       )}
     </StyledCardColumns>
   );
-}
+};
 
-export default Cards;
+export default Members;

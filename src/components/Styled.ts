@@ -207,12 +207,10 @@ export const StyledHero = styled.section`
   }
 `;
 export const StyledFooter = styled.div`
-  .footer {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-top: 15px;
     padding-bottom: 12px;
     font-size: 0.8rem;
     color: rgba(0, 0, 0, 0.44);
     margin-top: 50px;
-  }
 `;

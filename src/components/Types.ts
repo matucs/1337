@@ -24,7 +24,9 @@ export type MemberState = {
 
 export type MemberAction = {
   type: string;
-  payload: any;
+  payload: IMember[];
+  isLoading: boolean,
+  filter: { name: string; office: string };
 };
 
 export type DispatchType = (args: MemberAction) => MemberAction;

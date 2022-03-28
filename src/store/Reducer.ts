@@ -1,4 +1,4 @@
-import { IMember, MemberAction, MemberState } from "../components/type";
+import { IMember, MemberAction, MemberState } from "../components/Types";
 import * as actionTypes from "./ActionTypes";
 
 const initialState: MemberState = {
@@ -16,18 +16,18 @@ const Reducer = (
       return { ...state, result: action.payload , members: action.payload, loading: false};
     case actionTypes.SORT_BY_NAME:
       const _newState: IMember[] = state.members.slice() ;
-      _newState.sort((a, b) => (a.name > b.name ? 1 : -1));
+      _newState.sort((a:IMember, b:IMember) => (a.name > b.name ? 1 : -1));
       return { ...state, result: _newState };
     case actionTypes.SORT_BY_OFFICE:
       const newState: IMember[] = state.members.slice();
-      newState.sort((a, b) => (a.office > b.office ? 1 : -1));
+      newState.sort((a:IMember, b:IMember) => (a.office > b.office ? 1 : -1));
       return { ...state, result: newState };
     case actionTypes.FILTER:
       let result = state.members.slice();
-      if (action.payload.name !== "" || action.payload.office !== "") {
+      if (action.filter.name !== "" || action.filter.office !== "") {
         result = result.filter((m) =>
-          m.name?.toLocaleLowerCase().includes(action.payload.name) && 
-          m.office?.toLocaleLowerCase().includes(action.payload.office)
+          m.name?.toLowerCase().includes(action.filter.name.toLowerCase()) && 
+          m.office?.toLowerCase().includes(action.filter.office.toLowerCase())
         );
       }
       return { ...state, result: result };

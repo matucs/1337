@@ -1,7 +1,7 @@
 import React, { Dispatch, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchMembers, filterBy, sortBy } from "../store/ActionCreators";
-import Cards from "./Cards";
+import Members from "./Members";
 import Footer from "./Footer";
 import Header from "./Header";
 import {
@@ -11,9 +11,9 @@ import {
   StyledFilterByOffice,
   StyledFooter,
   StyledSortBy,
-} from "./Style";
+} from "./Styled";
 
-function Container() {
+const Content: React.FC<{}> = () => {
   const dispatch: Dispatch<any> = useDispatch();
   React.useEffect(() => {
     dispatch(fetchMembers());
@@ -29,21 +29,25 @@ function Container() {
   };
   const HandleNameFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const type = e.currentTarget.name === "filter-name" ? "name" : "office";
-    useName(e.target.value.trim());
+    useName(e.target.value);
     dispatch(
       filterBy({
         type,
-        payload: { filter: type, name: e.target.value.trim(), office },
+        payload: [],
+        isLoading: false,
+        filter: { name: e.target.value, office },
       })
     );
   };
   const HandleOfficeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const type = e.currentTarget.name === "filter-name" ? "name" : "office";
-    useOffice(e.target.value.trim());
+    useOffice(e.target.value);
     dispatch(
       filterBy({
         type,
-        payload: { filter: type, name, office: e.target.value.trim() },
+        payload: [],
+        isLoading: false,
+        filter: { name, office: e.target.value.trim() },
       })
     );
   };
@@ -88,7 +92,7 @@ function Container() {
             </StyledFilter>
           </StyledSortBy>
           <hr className="solid" />
-          <Cards />
+          <Members />
         </section>
       </StyledContainer>
       <StyledFooter>
@@ -96,6 +100,6 @@ function Container() {
       </StyledFooter>
     </>
   );
-}
+};
 
-export default Container;
+export default Content;

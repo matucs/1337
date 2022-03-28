@@ -1,8 +1,8 @@
 import React from "react";
-import Container from "./components/Container";
+import Content from "./components/Content";
 
-function App() {
-  return <Container />;
-}
+const App: React.FC<{}> = () => {
+  return <Content />;
+};
 
 export default App;

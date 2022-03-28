@@ -1,11 +1,10 @@
 import React from "react";
-import { WEBSITE_URL } from "./Constant";
 import Logo from "./assets/logo.svg";
-import { StyledHeadeCaption, StyledHeaderTitle, StyledHero } from "./Style";
-function Header() {
+import { StyledHeadeCaption, StyledHeaderTitle, StyledHero } from "./Styled";
+const Header: React.FC<{}> = () => {
   return (
     <StyledHero>
-      <a href={WEBSITE_URL}>
+      <a href={process.env.REACT_APP_WS_URI}>
         <img src={Logo} alt="logo" />
       </a>
       <StyledHeaderTitle>
@@ -16,5 +15,5 @@ function Header() {
       </StyledHeadeCaption>
     </StyledHero>
   );
-}
+};
 export default Header;
